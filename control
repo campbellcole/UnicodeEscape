@@ -1,9 +1,9 @@
 Package: com.tachestudios.unicodeescape
 Name: UnicodeEscape
 Depends: mobilesubstrate
-Version: 0.0.1
+Version: 1.0.0
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: Allows unicode escapes in iOS
 Maintainer: Campbell Cole
 Author: Campbell Cole
 Section: Tweaks

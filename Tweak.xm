@@ -53,5 +53,14 @@ static BOOL didOrig = NO;
 																%orig;
 								}
 }
-
+/*- (void)deleteBackward
+{
+								UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"delete" message:@"delete" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
+								[alert show];
+								[alert release];
+								lastTwoChars = [[lastTwoChars substringToIndex:lastTwoChars.length-(lastTwoChars.length>0)] retain];
+								hexChars = [[hexChars substringToIndex:hexChars.length-(hexChars.length>0)] retain];
+								%orig;
+}
+*/
 %end
