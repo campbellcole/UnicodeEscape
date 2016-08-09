@@ -22,7 +22,6 @@ static BOOL didOrig = NO;
 																if ([text isEqualToString:@"\\"])
 																{
 																								typingSpecialChar = NO;
-																								NSString *message = [NSString stringWithFormat:@"would enter:\\u%@", hexChars];
 																								NSString *data = [NSString stringWithFormat:@"\\u%@",hexChars];
 																								NSString *toInsert = [NSString stringWithCString:[data cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding];
 																								for (int i = 0; i < hexChars.length+2; i++)
@@ -30,6 +29,7 @@ static BOOL didOrig = NO;
 																																[self deleteBackward];
 																								}
 																								%orig(toInsert);
+																								AudioServicesPlaySystemSound(1352);
 																								didOrig = YES;
 																}
 																hexChars = [[hexChars stringByAppendingString:text] retain];
@@ -52,11 +52,6 @@ static BOOL didOrig = NO;
 								if (!didOrig) {
 																%orig;
 								}
-}
-- (void)deleteFromInput
-{
-								lastTwoChars = [[lastTwoChars substringToIndex:lastTwoChars.length-(lastTwoChars.length>0)] retain];
-								hexChars = [[hexChars substringToIndex:hexChars.length-(hexChars.length>0)] retain];
 }
 
 %end
