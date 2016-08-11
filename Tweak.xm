@@ -7,9 +7,20 @@
 - (void)deleteBackward;
 @end
 
+unsigned long long unistrlen(unichar chars[])
+{
+    unsigned long long length = 0llu;
+    if(NULL == chars) return length;
+
+    while(0 != chars[length])
+        length++;
+
+    return length;
+}
+
 %hook UIKeyboardImpl
 
-static NSString *lastTwoChars = [[NSString alloc] init];
+static unichar lastTwoChars[2];
 static NSString *hexChars = [[NSString alloc] init]; // this will only be populating when typingSpecialChar == YES
 static BOOL typingSpecialChar = NO;
 static BOOL didOrig = NO;
@@ -34,16 +45,16 @@ static BOOL didOrig = NO;
 																}
 																hexChars = [[hexChars stringByAppendingString:text] retain];
 								}
-								if (lastTwoChars.length < 2)
+								if (unistrlen(lastTwoChars) < 2)
 								{
-																lastTwoChars = [[lastTwoChars stringByAppendingString:text] retain];
+																lastTwoChars[unistrlen(lastTwoChars)] = [text characterAtIndex:0];
 								}
 								else
 								{
-																lastTwoChars = [[lastTwoChars substringFromIndex:1] retain];
-																lastTwoChars = [[lastTwoChars stringByAppendingString:text] retain];
+																lastTwoChars[0] = lastTwoChars[1];
+																lastTwoChars[1] = [text characterAtIndex:0];
 								}
-								if ([lastTwoChars isEqualToString:@"\\u"])
+								if ([[NSString stringWithCharacters:lastTwoChars length:2] isEqualToString:@"\\u"])
 								{
 																AudioServicesPlaySystemSound(1352); // not using kSystemSoundID_Vibrate because 1352 ignores mute switch position
 																typingSpecialChar = YES;
