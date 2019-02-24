@@ -1,9 +1,9 @@
-Package: com.tachestudios.unicodeescape
-Name: UnicodeEscape
+Package: com.campbellcole.unicodeescape12
+Name: UnicodeEscapeiOS12
 Depends: mobilesubstrate
-Version: 1.0.1
+Version: 2.0.0
 Architecture: iphoneos-arm
-Description: Allows unicode escapes in iOS
+Description: Enables unicode escapes in iOS
 Maintainer: Campbell Cole
 Author: Campbell Cole
 Section: Tweaks
