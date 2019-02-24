@@ -1,9 +1,9 @@
 Package: com.campbellcole.unicodeescape12
-Name: UnicodeEscapeiOS12
+Name: UnicodeEscape12
 Depends: mobilesubstrate
 Version: 2.0.0
 Architecture: iphoneos-arm
-Description: Enables unicode escapes in iOS
+Description: Enables Unicode escapes in iOS
 Maintainer: Campbell Cole
 Author: Campbell Cole
 Section: Tweaks

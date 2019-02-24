@@ -1,7 +1,7 @@
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = UnicodeEscape12
-UnicodeEscape_FILES = Tweak.xm
+UnicodeEscape12_FILES = Tweak.xm
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
