@@ -101,8 +101,8 @@ static BOOL listening = NO;
 
             // figured this one out through trial and error
             // if this function isn't called before %orig, the pressed character
-            // will still be typed because there is a delay after returning calling %orig
-            // to the character being typed. if %orig is never called, the keyboard becomes
+            // will still be typed because there is a delay between calling %orig
+            // to the character being inserted. if %orig is never called, the keyboard becomes
             // deadlocked because the touch is never resolved. the only alternative is
             // to trigger a task a few milliseconds after this %orig call, but that seems cumbersome
             [self clearAllTouchInfo];
