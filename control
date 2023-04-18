@@ -1,9 +1,9 @@
-Package: com.campbellcole.unicodeescape12
-Name: UnicodeEscape12
-Depends: mobilesubstrate
-Version: 2.0.0
+Package: net.boyaard.unicodeescape15
+Name: UnicodeEscape15
+Version: 3.0.0
 Architecture: iphoneos-arm
-Description: Enables Unicode escapes in iOS
-Maintainer: Campbell Cole
-Author: Campbell Cole
+Description: Type any Unicode character using Unicode escapes.
+Maintainer: Campbell Cole <https://github.com/campbellcole>
+Author: Campbell Cole <https://github.com/campbellcole>
 Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
