@@ -1,10 +1,7 @@
 #ifndef UIKEYBOARDIMPL_H
 #define UIKEYBOARDIMPL_H
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
-@interface UIKeyboardImpl : UIView
+@interface UIKeyboardImpl
 
 +(id)sharedInstance;
 -(void)deleteBackward;
